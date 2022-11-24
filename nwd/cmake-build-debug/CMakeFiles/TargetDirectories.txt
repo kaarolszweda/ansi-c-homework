@@ -1,0 +1,3 @@
+/Users/karolszweda/Desktop/c/nwd/cmake-build-debug/CMakeFiles/nwd.dir
+/Users/karolszweda/Desktop/c/nwd/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/karolszweda/Desktop/c/nwd/cmake-build-debug/CMakeFiles/rebuild_cache.dir

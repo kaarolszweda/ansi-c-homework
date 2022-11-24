@@ -1,0 +1,3 @@
+/Users/karolszweda/Desktop/c/big_num_mult/cmake-build-debug/CMakeFiles/big_num_mult.dir
+/Users/karolszweda/Desktop/c/big_num_mult/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/karolszweda/Desktop/c/big_num_mult/cmake-build-debug/CMakeFiles/rebuild_cache.dir

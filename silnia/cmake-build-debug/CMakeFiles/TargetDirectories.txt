@@ -1,0 +1,3 @@
+/Users/karolszweda/Desktop/c/silnia/cmake-build-debug/CMakeFiles/silnia.dir
+/Users/karolszweda/Desktop/c/silnia/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/karolszweda/Desktop/c/silnia/cmake-build-debug/CMakeFiles/rebuild_cache.dir

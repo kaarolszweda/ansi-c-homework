@@ -1,29 +1,37 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int Konwersja_Dec_Bin(unsigned dec, char* bin);
 int Konwersja_Dec_Bin_B(unsigned dec, char* bin);
 
-int main() {
+int main(int argc, char *argv[]) {
 
+    int *ptr = (int*)malloc(n * sizeof(int));
     unsigned int dec;
+    int metoda = atoi(argv[1]);
     char bin[10] = "";
-    char bins[10] = "";
 
     printf("Podaj liczbę dziesiętną: ");
     scanf("%d", &dec);
-    Konwersja_Dec_Bin(dec, bin);
 
-    for (int j = 9; j >= 0; j--){
-        printf("%c", bin[j]);
+    if (metoda == 1){
+        printf("WERSJA A (standardowe operatory): ");
+        Konwersja_Dec_Bin(dec, bin);
+
+        //https://www.educative.io/answers/how-to-use-malloc-in-c
+        for (int i = 9; i >= 0; i--){
+            printf("%c", bin[i]);
+        }
+        printf("\n");
+    }  else if (metoda == 2){
+        printf("WERSJA B (przesunięcie bitowe): ");
+        Konwersja_Dec_Bin_B(dec, bin);
+
+        for (int i = 6; i >= 0; i--){
+            printf("%c", bin[i]);
+        }
     }
-    printf("\n");
 
-
-    Konwersja_Dec_Bin_B(dec, bins);
-
-    for (int j = 6; j >= 0; j--){
-        printf("%c", bins[j]);
-    }
     return 0;
 }
 

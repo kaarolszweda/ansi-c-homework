@@ -615,8 +615,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/Users/karolszweda/Desktop/c/newton/cmake-build-debug",
-		"source" : "/Users/karolszweda/Desktop/c/newton"
+		"build" : "/Users/karolszweda/Programming/c/ansi-c-homework/newton/cmake-build-debug",
+		"source" : "/Users/karolszweda/Programming/c/ansi-c-homework/newton"
 	},
 	"version" : 
 	{

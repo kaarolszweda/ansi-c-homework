@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/karolszweda/Desktop/c/newton/cmake-build-debug"
+			"value" : "/Users/karolszweda/Programming/c/ansi-c-homework/newton/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -419,7 +419,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/karolszweda/Desktop/c/newton"
+			"value" : "/Users/karolszweda/Programming/c/ansi-c-homework/newton"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -991,7 +991,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/karolszweda/Desktop/c/newton/cmake-build-debug"
+			"value" : "/Users/karolszweda/Programming/c/ansi-c-homework/newton/cmake-build-debug"
 		},
 		{
 			"name" : "newton_IS_TOP_LEVEL",
@@ -1015,7 +1015,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/karolszweda/Desktop/c/newton"
+			"value" : "/Users/karolszweda/Programming/c/ansi-c-homework/newton"
 		}
 	],
 	"kind" : "cache",

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/karolszweda/Desktop/c/newton
+# Install script for directory: /Users/karolszweda/Programming/c/ansi-c-homework/newton
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/karolszweda/Desktop/c/newton/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/karolszweda/Programming/c/ansi-c-homework/newton/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

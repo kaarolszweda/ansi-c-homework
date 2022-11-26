@@ -36,7 +36,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/karolszweda/Desktop/c/newton/cmake-build-debug/
+cmake_ninja_workdir = /Users/karolszweda/Programming/c/ansi-c-homework/newton/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target newton
 
@@ -46,7 +46,7 @@ cmake_ninja_workdir = /Users/karolszweda/Desktop/c/newton/cmake-build-debug/
 
 build cmake_object_order_depends_target_newton: phony || CMakeFiles/newton.dir
 
-build CMakeFiles/newton.dir/main.c.o: C_COMPILER__newton_Debug /Users/karolszweda/Desktop/c/newton/main.c || cmake_object_order_depends_target_newton
+build CMakeFiles/newton.dir/main.c.o: C_COMPILER__newton_Debug /Users/karolszweda/Programming/c/ansi-c-homework/newton/main.c || cmake_object_order_depends_target_newton
   DEP_FILE = CMakeFiles/newton.dir/main.c.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/newton.dir
@@ -76,7 +76,7 @@ build newton: C_EXECUTABLE_LINKER__newton_Debug CMakeFiles/newton.dir/main.c.o
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/karolszweda/Desktop/c/newton/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /Users/karolszweda/Programming/c/ansi-c-homework/newton/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -87,7 +87,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/karolszweda/Desktop/c/newton/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/karolszweda/Desktop/c/newton -B/Users/karolszweda/Desktop/c/newton/cmake-build-debug
+  COMMAND = cd /Users/karolszweda/Programming/c/ansi-c-homework/newton/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/karolszweda/Programming/c/ansi-c-homework/newton -B/Users/karolszweda/Programming/c/ansi-c-homework/newton/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -103,7 +103,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /Users/karolszweda/Desktop/c/newton/cmake-build-debug
+# Folder: /Users/karolszweda/Programming/c/ansi-c-homework/newton/cmake-build-debug
 
 build all: phony newton
 

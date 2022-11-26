@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 int licz_dwumian_i(int n, int k);
 int licz_dwumian_r(int n, int k);
+int gen_rozkl(int k, int n, float p);
 
 int main(int argc, char *argv[]) {
 
@@ -22,6 +24,7 @@ int main(int argc, char *argv[]) {
     }
     else return 1;
 
+    gen_rozkl(3, 4, 0.5);
     return 0;
 }
 int min(int a, int b){
@@ -45,4 +48,13 @@ int licz_dwumian_r(int n, int k){
     if (k == 0 || k == n)
         return 1;
     return licz_dwumian_r(n - 1, k - 1) + licz_dwumian_r(n - 1, k);
+}
+
+int gen_rozkl(int k, int n, float p){
+
+    double wynik = licz_dwumian_i(n, k)*pow(p, k)*pow((1 - p), n - k);
+    printf("%f", wynik);
+    // TODO Add visualisation using gnuplot
+
+    return 0;
 }

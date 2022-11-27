@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
 //    gen_rozkl(3, 4, 0.5);
     //passing gnuplot values
     double wynik;
-    for (int i = 0; i <= 10; i++){
+    for (int i = 0; i <= 40; i++){
     // TODO Figure out what is wrong with formula of plotting?
 
 //        p_plot = gen_rozkl(i, n_plot, 0.5);

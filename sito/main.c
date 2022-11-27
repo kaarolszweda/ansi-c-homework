@@ -1,18 +1,22 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int FindPrimesUpToN(int n);
+int znajdz_liczby_pierwsze(int n);
 
 int main(){
     printf("Program znajdujący wszystkie liczby pierwsze mniejsze od zadanej wartości\n");
-    FindPrimesUpToN(70);
+
+    int zakres;
+    printf("Podaj wartość zakres poszukiwanych liczb pierwszych: ");
+    scanf("%d", &zakres);
+
+    znajdz_liczby_pierwsze(zakres);
 
     return 0;
 }
 
-int FindPrimesUpToN(int n){
+int znajdz_liczby_pierwsze(int n){
     char* arr = (char*) malloc(n*sizeof (char));
-//    char arr[n + 1];
 
     //Uzupełnienie całej tablicy wartościami 1
     for (int i = 0; i <= n; i++){

@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-// usigned int max n = 12
+// usigned int max n = 12cd
 // double int max n = 170
 
 double  licz_silnia_i(int n){

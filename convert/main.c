@@ -11,21 +11,13 @@ struct RZYM {
          {400,"CD"},{500,"D"},{900,"CM"},{1000,"M"}};
 int value(char r)
 {
-    if (r == 'I')
-        return 1;
-    if (r == 'V')
-        return 5;
-    if (r == 'X')
-        return 10;
-    if (r == 'L')
-        return 50;
-    if (r == 'C')
-        return 100;
-    if (r == 'D')
-        return 500;
-    if (r == 'M')
-        return 1000;
-
+    if (r == 'I') return 1;
+    if (r == 'V') return 5;
+    if (r == 'X') return 10;
+    if (r == 'L') return 50;
+    if (r == 'C') return 100;
+    if (r == 'D') return 500;
+    if (r == 'M') return 1000;
     return -1;
 }
 int main() {
@@ -41,9 +33,10 @@ int main() {
 
     if (roman) {
 
-        int res = 0;
+        int wynik = 0;
 
         for (int i = 0; i < strlen(number); i++) {
+
 
             int s1 = value(number[i]);
             if (i + 1 < strlen(number)) {
@@ -55,18 +48,18 @@ int main() {
                     // Value of current symbol
                     // is greater or equal to
                     // the next symbol
-                    res = res + s1;
+                    wynik = wynik + s1;
                 } else {
                     // Value of current symbol is
                     // less than the next symbol
-                    res = res + s2 - s1;
+                    wynik = wynik + s2 - s1;
                     i++;
                 }
             } else {
-                res = res + s1;
+                wynik = wynik + s1;
             }
         }
-        printf("%d", res);
+        printf("%d \n", wynik);
     }
 
     if (digit)
@@ -84,7 +77,7 @@ int main() {
                     number_a -= rz[i].arab;
                 }
             }
-            printf("%s", roman_s);
+            printf("%s \n", roman_s);
             free(roman_s);
         }
     }

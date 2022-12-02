@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
     double p_plot = 0.5;
     FILE *fp = NULL;
     FILE *gnupipe = NULL;
-    char *GnuCommands[] = {"set title \"Rozklad Bernoulliego\"", "plot 'data.tmp'"};
+    char *GnuCommands[] = {"set title \"Rozkład prawdopodobieństwa Bernoulliego\"", "plot 'data.tmp'"};
 
     fp = fopen("data.tmp", "w");
     gnupipe = popen("gnuplot -persistant", "w");
@@ -34,15 +34,11 @@ int main(int argc, char *argv[]) {
     }
     else return 1;
 
-//    gen_rozkl(3, 4, 0.5);
     //passing gnuplot values
     double wynik;
-    for (int i = 0; i <= 40; i++){
-    // TODO Figure out what is wrong with formula of plotting?
-
-//        p_plot = gen_rozkl(i, n_plot, 0.5);
-        wynik = gen_rozkl(i, n_plot, 0.2);
-        fprintf(fp, "%d %f\n", n_plot, wynik);
+    for (int i = 0; i <= 10; i++){
+        wynik = gen_rozkl(i, n_plot, 0.6);
+        fprintf(fp, "%d %f\n", i, wynik);
 
         n_plot++;
 
@@ -78,8 +74,8 @@ int licz_dwumian_r(int n, int k){
 
 double gen_rozkl(int k, int n, float p){
 
-    double wynik = licz_dwumian_i(n, k)*pow(p, k)*pow((1 - p), n - k);
-    printf("%f", wynik);
+    double wynik = licz_dwumian_r(n, k)*pow(p, k)*pow((1 - p), n - k);
+    printf("%f | ", wynik);
 
     return wynik;
 }

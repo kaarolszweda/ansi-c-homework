@@ -1,53 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
-int str_length(char str[]) {
-    // initializing count variable (stores the length of the string)
-    int count;
-
-    // incrementing the count till the end of the string
-    for (count = 0; str[count] != '\0'; ++count);
-
-    // returning the character count of the string
-    return count;
-}
+int find_max(int a, int b);
+int karatsuba(int x, int y);
 
 int main() {
     //add user input char
-    char num1[] = "1235421415454545454545454544";
-    char num2[] = "1235421415454545454545454544";
+    char a[10] = "";
+    char b[10] = "";
+    int x, y;
 
     printf("Program obliczający duże liczby naturalne.\n");
-    printf("Podane liczby: %s %s\n", num1, num2);
+    printf("Podaj liczbę x: ");
+    scanf("%d", &x);
+    printf("Podaj liczbę y: ");
+    scanf("%d", &y);
 
-    //size of strings
-    int len_num_1 = str_length(num1);
-    int len_num_2 = str_length(num2);
-
-    if (len_num_1 == 0 || len_num_2 == 0){
-        printf("nie ma co mnożyć");
-    }
-
-    int i_n1 = 0;
-    int i_n2 = 0;
-
-    for (int i = len_num_1; i >= 0 ;i--){
-        int carry = 0;
-        int n1 = num1[i] - '0';
-
-        i_n2 = 0;
-        for (int j = len_num_2 - 1; j > 0; j--){
-            int n2 = num2[j] - '0';
-        }
-
-    }
-
+    long int wynik = karatsuba(x, y);
+    printf("Wynik wynosi: %ld", wynik);
     return 0;
 }
+int find_max(int a, int b){
+    return (a > b) ? a : b;
+}
+//https://www.youtube.com/watch?v=yWI2K4jOjFQ
 
-//int len_of_input(char input[]){
-//    for(int i = 0; i < (sizeof(input) / (sizeof(input[0]))); i++){
-//
-//    }
-//};
+int karatsuba(int x, int y){
+    if (x < 10 || y <10){
+        return x * y;
+    } else {
+
+        int n = find_max(floor(log10(abs(x))), floor(log10(abs(y))) );
+        int half = floor(n / 2);
+
+        int a = floor(x / pow(10, half));
+        int b = x % (int)pow(10, half);
+        int c = floor(y / pow(10, half));
+        int d = y % (int)pow(10, half);
+
+        int ac = karatsuba(a, c);
+        int bd = karatsuba(b, d);
+
+        int ad_plus_bd = karatsuba(a + b, c + d) - ac - bd;
+        return ac * (pow(10, (2 * half)) + (ad_plus_bd * pow(10, half)) + bd);
+    }
+}

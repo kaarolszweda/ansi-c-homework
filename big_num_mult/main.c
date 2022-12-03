@@ -1,53 +1,68 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <math.h>
 
-int str_length(char str[]) {
-    // initializing count variable (stores the length of the string)
-    int count;
-
-    // incrementing the count till the end of the string
-    for (count = 0; str[count] != '\0'; ++count);
-
-    // returning the character count of the string
-    return count;
-}
+int find_max(long int a, long int b);
+int find_len(long int num);
+long int karatsuba(long int x, long int y);
 
 int main() {
-    //add user input char
-    char num1[] = "1235421415454545454545454544";
-    char num2[] = "1235421415454545454545454544";
+    long int x, y;
 
     printf("Program obliczający duże liczby naturalne.\n");
-    printf("Podane liczby: %s %s\n", num1, num2);
+    printf("Podaj liczbę x: ");
+    scanf("%ld", &x);
+    printf("Podaj liczbę y: ");
+    scanf("%ld", &y);
 
-    //size of strings
-    int len_num_1 = str_length(num1);
-    int len_num_2 = str_length(num2);
+    int dlugosc = find_len(x);
+    printf("Długość liczby x: %d\n", dlugosc);
 
-    if (len_num_1 == 0 || len_num_2 == 0){
-        printf("nie ma co mnożyć");
-    }
 
-    int i_n1 = 0;
-    int i_n2 = 0;
-
-    for (int i = len_num_1; i >= 0 ;i--){
-        int carry = 0;
-        int n1 = num1[i] - '0';
-
-        i_n2 = 0;
-        for (int j = len_num_2 - 1; j > 0; j--){
-            int n2 = num2[j] - '0';
-        }
-
-    }
+    long int wynik = karatsuba(x, y);
+    printf("Wynik wynosi: %ld\n", wynik);
 
     return 0;
 }
+int find_max(long int a, long int b){
+    return (a > b) ? a : b;
+}
+int find_len(long int num){
+    int result = 0;
+    do {
+        num /= 10;
+        ++result;
 
-//int len_of_input(char input[]){
-//    for(int i = 0; i < (sizeof(input) / (sizeof(input[0]))); i++){
-//
-//    }
-//};
+    } while (num != 0);
+    return result;
+}
+//https://www.youtube.com/watch?v=yWI2K4jOjFQ
+long int karatsuba(long int x, long int y){
+    if (x < 10 || y < 10){
+        return x * y;
+    } else {
+        long int n = find_max(find_len(x), find_len(y));
+        long int half = n / 2;
+
+        long int a = x / pow(10, half);
+        printf("A: %ld | ", a);
+        long int b = x % (long int)pow(10, half);
+        printf("B: %ld | ", b);
+        long int c = y / pow(10, half);
+        printf("C: %ld | ", c);
+        long int d = y % (long int)pow(10, half);
+        printf("D: %ld | ", d);
+
+        long int ac = karatsuba (a, c);
+        printf("AC: %ld | ", ac);
+        long int bd = karatsuba (b, d);
+        printf("BD: %ld | ", bd);
+
+        long int ad_plus_bc = (karatsuba (a + b, c + d) - ac - bd);
+        printf("AD+BC %ld | ", ad_plus_bc);
+        long int wynik = ac * (pow(10, (2 * half)) + (ad_plus_bc * pow(10, half)) + bd);
+        printf("WYNIK %ld | ", wynik);
+
+        return ac * (pow(10, (2 * half)) + (ad_plus_bc * pow(10, half)) + bd);
+    };
+}

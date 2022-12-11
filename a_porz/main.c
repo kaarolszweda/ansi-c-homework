@@ -21,19 +21,22 @@ int main(){
 
     char *Tekst[N_MAX];
     char buffer[100];
+
+    //Wczytywanie tekstu
     int counter = 0;
     int i = 0;
-
     printf("Wczytaj wiersze tekstu: \n");
     while( i < N_MAX && fgets(buffer, 100, stdin) != NULL){
         Tekst[i] = strndup(buffer, 100);
         if (Tekst[i] != NULL){
             counter++;
+            i++;
         }
-        i++;
     }
     printf("\nPosortowane  alfabetycznie: \n");
     sortutil(Tekst, counter);
+
+    //Wypisanie alfabetycznie uporządkowanie tekstu
     for(int i = 0; i < counter; i++){
         printf("%s", Tekst[i]);
     }

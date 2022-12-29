@@ -57,10 +57,10 @@ int sort_string_inc( const void *str1, const void *str2){
     char *const *pp2 = str2;
     return strcmp(*pp1, *pp2);
 }
-int sort_string_ddec( const void *str1, const void *str2){
+int sort_string_dec( const void *str1, const void *str2){
     char *const *pp1 = str1;
     char *const *pp2 = str2;
-    return -strcmp(*pp1, *pp2);
+    return strcmp(*pp2, *pp1);
 }
 void sortutil_inc(char* lines[], int count){
     qsort(lines, count, sizeof(*lines), sort_string_inc);

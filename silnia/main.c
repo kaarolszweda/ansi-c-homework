@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
         time_taken = ((double)t)/CLOCKS_PER_SEC;
         printf("%f sekundy", time_taken);
 
-    }else if (metoda == 2){
+    } else if (metoda == 2){
         t = clock();
         silnia_r = licz_silnia_r(n);
         t = clock() - t;

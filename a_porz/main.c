@@ -1,4 +1,3 @@
-
 //TODO
 // Porządkowanie alfabetyczne. Proszę napisać program, który wczytuje kolejne wiersze tekstu wprowadzanego
 // ze standardowego wejścia, aż do napotkania znacznika końca pliku (przy wprowadzaniu z klawiatury: Ctrl-D),
@@ -6,13 +5,13 @@
 // a następnie porządkuje wiersze w kolejności alfabetycznej i wyprowadza wynik na standardowe wyjście.
 // Zadanie można stosunkowo łatwo wykonać korzystają z funkcji qsort(...) oraz strcmp(...) zdefiniowanych w plikach
 // nagłówkowych <stdlib.h> i <string.h>. Do wczytywania kolejnych wierszy doskonale nadaje się funkcja standardowa
-// fgets(...); warto zadbać o to, aby puste wiersze były pomijane na etapie wczytywania.
-
-#define N_MAX 10
+// fgets(...); warto zadbać o to, aby puste wiersze były pomijane na etapie wczytywania
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
+#define N_MAX 10
 
 int sort_string( const void *str1, const void *str2);
 void sortutil(char* lines[], int count);

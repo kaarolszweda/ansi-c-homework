@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
     fp = fopen("data.tmp", "w");
     gnupipe = popen("gnuplot -persistant", "w");
 
-    //binomial stuff
+    //binomial
     int metoda, n, k;
     double dwumian_i, dwumian_r;
 
@@ -36,12 +36,10 @@ int main(int argc, char *argv[]) {
 
     //passing gnuplot values
     double wynik;
-    for (int i = 0; i <= 10; i++){
-        wynik = gen_rozkl(i, n_plot, 0.6);
+    for (int i = 0; i <= 12; i++){
+        wynik = gen_rozkl(i, n, 0.5);
         fprintf(fp, "%d %f\n", i, wynik);
-
         n_plot++;
-
     }
 
     for (int i = 0; i < 2; i++){
@@ -49,9 +47,11 @@ int main(int argc, char *argv[]) {
     }
     return 0;
 }
+
 int min(int a, int b){
     return (a > b) ? b : a;
 }
+
 int licz_dwumian_i(int n, int k){
     int C[k + 1];
     for (int i = 0; i < (k + 1); i++){
@@ -73,9 +73,7 @@ int licz_dwumian_r(int n, int k){
 }
 
 double gen_rozkl(int k, int n, float p){
-
     double wynik = licz_dwumian_r(n, k)*pow(p, k)*pow((1 - p), n - k);
     printf("%f | ", wynik);
-
     return wynik;
 }
